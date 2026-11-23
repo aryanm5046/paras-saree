@@ -1,0 +1,61 @@
+export const categories = [
+  { id: 'sarees', name: 'Sarees' },
+  { id: 'lehengas', name: 'Lehengas' },
+];
+
+export const products = [
+  {
+    id: 'jarkan-work-saree',
+    name: 'Jarkan Work Saree',
+    category: 'sarees',
+    description: 'A designer saree with jarkan embellishment and a deep wine blouse.',
+    image: '/images/jarkan-saree.webp',
+    imageAlt: 'Close-up of a wine blouse with a decorated neckline and an olive saree drape',
+    source: { name: 'Instagram', url: 'https://www.instagram.com/reel/Dc5j7Z2Mkkd/' },
+  },
+  {
+    id: 'bridal-kanjivaram-saree',
+    name: 'Bridal Kanjivaram Saree',
+    category: 'sarees',
+    description: 'A pink and gold bridal saree shown with a contrasting blue blouse.',
+    image: '/images/kanjivaram-saree.webp',
+    imageAlt: 'Model wearing a pink and gold bridal saree in a sandstone alcove',
+    source: { name: 'Instagram', url: 'https://www.instagram.com/reel/DceQ-lyBzl3/' },
+  },
+  {
+    id: 'red-wedding-lehenga',
+    name: 'Red Wedding Lehenga',
+    category: 'lehengas',
+    description: 'A red wedding lehenga with dense gold embroidery and a wide ornamental hem.',
+    image: '/images/wedding-lehenga.webp',
+    imageAlt: 'Red lehenga skirt with gold embroidery displayed in the shop',
+    source: { name: 'TradeIndia', url: 'https://www.tradeindia.com/products/new-wedding-lehenga-c7867235.html' },
+  },
+  {
+    id: 'party-wear-silk-saree',
+    name: 'Party Wear Silk Saree',
+    category: 'sarees',
+    description: 'A dark silk party saree with a decorative border and a stitched work blouse.',
+    image: '/images/party-silk-saree.webp',
+    imageAlt: 'Model wearing a dark silk saree with a silver border and a red blouse',
+    source: { name: 'Instagram', url: 'https://www.instagram.com/reel/Db7P0PdhRVZ/' },
+  },
+  {
+    id: 'teal-velvet-lehenga',
+    name: 'Teal Velvet Lehenga',
+    category: 'lehengas',
+    description: 'A floor-length teal velvet lehenga with gold floral embroidery.',
+    image: '/images/teal-lehenga.webp',
+    imageAlt: 'Teal lehenga skirt with gold flowers and a scalloped embroidered hem',
+    source: { name: 'TradeIndia', url: 'https://www.tradeindia.com/products/fancy-lehenga-c7866886.html' },
+  },
+  {
+    id: 'embroidered-net-saree',
+    name: 'Embroidered Net Saree',
+    category: 'sarees',
+    description: 'A dark net saree with floral motifs and a wide red and gold border.',
+    image: '/images/embroidered-net-saree.webp',
+    imageAlt: 'Folded dark net saree with red floral embroidery and a gold border',
+    source: { name: 'TradeIndia', url: 'https://www.tradeindia.com/products/fancy-embroidered-saree-c7664990.html' },
+  },
+];
