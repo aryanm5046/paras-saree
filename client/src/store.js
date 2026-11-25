@@ -15,3 +15,18 @@ export function enquiryUrl(product) {
 
   return `https://wa.me/918800632535?text=${encodeURIComponent(message)}`;
 }
+
+export function shortlistEnquiryUrl(items) {
+  const pieces = items.map(({ product, quantity }) => (
+    `- ${product.name} × ${quantity} (${product.source.url})`
+  ));
+  const message = [
+    'Hello Paras Sarees, I would like wholesale prices and availability for these designs.',
+    '',
+    ...pieces,
+    '',
+    'Please let me know the minimum order quantity and delivery options.',
+  ].join('\n');
+
+  return `https://wa.me/918800632535?text=${encodeURIComponent(message)}`;
+}
