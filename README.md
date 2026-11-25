@@ -1,10 +1,10 @@
 # Paras Sarees
 
-A first storefront for Paras Sarees in Jogiwara, Chandni Chowk. The React client uses plain CSS. Express serves a small catalog sourced from the shop’s public listings.
+A wholesale saree and lehenga storefront for Paras Sarees in Jogiwara, Chandni Chowk. The React client uses plain CSS. Express serves the catalog from PostgreSQL when configured. Shoppers can save designs, enter quantities, and request a quote in one WhatsApp message.
 
 ## Run locally
 
-Use Node.js 22.12 or later. From the repository root, install dependencies.
+Use Node.js 22.22 or later. From the repository root, install dependencies.
 
 ```sh
 npm ci --prefix client
@@ -27,13 +27,27 @@ npm run build --prefix client
 npm start --prefix server
 ```
 
+## PostgreSQL setup
+
+For a quick local demo, start the server with `DATABASE_URL` unset. Express reads the bundled catalog from `server/src/data/products.js`.
+
+For a database-backed catalog, create a PostgreSQL database and copy `server/.env.example` to `server/.env`. Set `DATABASE_URL` to the connection string supplied by your PostgreSQL server. In a hosted environment, set `DATABASE_URL` using the hosting platform’s environment settings.
+
+Run the seed command before starting Express with the database enabled.
+
+```sh
+npm run db:seed --prefix server
+```
+
+The seed command creates the `catalog_products` table and inserts missing designs in one transaction. It preserves edits to existing records. Keep any product image referenced by the database in the client’s public assets or supply a URL that visitors can open.
+
 ## Catalog API
 
 - `GET /api/health` returns `{"status":"ok"}`.
 - `GET /api/products` returns category filters and catalog entries. Add `category=sarees` or `category=lehengas` and optionally a `q` search term.
 - `GET /api/products/:id` returns a catalog entry and its source link.
 
-The catalog data lives in `server/src/data/products.js`. Product enquiries open WhatsApp with the selected piece and its source link. Pricing and availability are confirmed by the shop.
+Product enquiries include the source link so the shop can identify the design. The shortlist is saved in the customer’s browser and can include quantities for multiple designs. The shop confirms pricing, availability, minimum quantities, and delivery on WhatsApp.
 
 ## Imagery
 
